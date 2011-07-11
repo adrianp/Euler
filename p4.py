@@ -20,11 +20,9 @@ def main():
     
     #Tip taken from the overview supplied after solving the problem (see last page)
     if a % 11 == 0:
-      start = 999
-      step = 1
+      start, step = 999, 1
     else:
-      start = 990
-      step = 11
+      start, step = 990, 11
     
     #iterating using a as a limit makes it impossible (wrong solution given) 
     #to stop after a*b gets too small (or at least I couldn't find a way to do it)

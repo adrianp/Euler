@@ -1,7 +1,7 @@
 from math import sqrt
 import sys
 
-def main2(n):
+def main(n):
   factor = 1
   
   #while this is not necessary, checking now for division by 2 means we won't have
@@ -28,4 +28,4 @@ def main2(n):
     print n #is a prime itself
 
 if __name__ == "__main__":
-  sys.exit(main2(600851475143))
+  sys.exit(main(600851475143))
