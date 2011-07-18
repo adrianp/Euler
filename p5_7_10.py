@@ -4,9 +4,11 @@
 #For that, I implemented the Sieve of Eratosthenes: http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 #And since we have that sieve, we can use it also for problem 7, which requires
 #finding the 10001st prime
+#And we can also use it for problem 10
 
 import sys
 from math import sqrt, floor, log
+from operator import add
 
 def sieve(limit):
   primes = list(range(2, limit+1))
@@ -34,8 +36,9 @@ def snd(nr):
   return N
 
 if __name__ == "__main__":
-  print snd(20)
+  print snd(20) #Problem 5
   #Since we know the answer now, we could choose the sieve limit somewhere closer to
   #the 10001st prime (104743)
-  print sieve(200000)[10000] #notice 10001
+  print sieve(200000)[10000] #Problem 7, notice 10001
+  print reduce(add, sieve(2000000)) #Problem 10
   
