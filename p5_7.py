@@ -1,12 +1,12 @@
-import sys
-from math import sqrt, floor, log
-
 #At first I resolved problem 5 on paper, as it is quite simple to do that
 #But on the Euler website there is suggested a solution  that can be implemented
 #The catch is that we need the first N-th prime numbers
-#For that, I will be using the Sieve of Eratosthenes: http://en.wikipedia.org/wiki/Sieve_of_Atkin
+#For that, I implemented the Sieve of Eratosthenes: http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 #And since we have that sieve, we can use it also for problem 7, which requires
 #finding the 10001st prime
+
+import sys
+from math import sqrt, floor, log
 
 def sieve(limit):
   primes = list(range(2, limit+1))

@@ -11,7 +11,7 @@ def main(n):
     n /= 2
     while n % 2 == 0:
       n /= 2
-      
+
   current = 3
   maxval = sqrt(n)
   while n>1 and current<=maxval:

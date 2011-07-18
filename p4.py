@@ -13,6 +13,11 @@ def isPalyndrome(n):
       return False
     j += 1
   return True
+  
+#string version
+def isPalyndrome2(n):
+  string = str(n)
+  return string == string[::-1]
 
 def main():
   pal = 0
@@ -29,7 +34,7 @@ def main():
     for b in range (start, 100, -step): 
       if a*a < pal: #because x*x > x*y where x >= y
         return pal
-      if isPalyndrome(a*b):
+      if isPalyndrom2(a*b):
         if a*b > pal:
           pal = a*b
   return pal

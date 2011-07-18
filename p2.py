@@ -1,10 +1,10 @@
-import sys
-
 #The algorithm to generate the n-th element of the Fibonacci sequence is described
 #in detail on the following pages:
 # [1] http://bosker.wordpress.com/2011/04/29/the-worst-algorithm-in-the-world/
 # [2] http://en.wikipedia.org/wiki/Fibonacci_number#Matrix_form
 # [3] http://www.ics.uci.edu/~eppstein/161/960109.html
+
+import sys
 
 def NtoBinary(n):
   bits = []
@@ -27,7 +27,6 @@ def fibonacci(n):
     else:
       a, b = a*a + b*b, (a+c)*b
     c = a + b
-    #print a, b, c
   return a
   
 def main():
