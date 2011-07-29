@@ -1,10 +1,10 @@
 #At first I resolved problem 5 on paper, as it is quite simple to do that
-#But on the Euler website there is suggested a solution  that can be implemented
-#The catch is that we need the first N-th prime numbers
-#For that, I implemented the Sieve of Eratosthenes: http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
-#And since we have that sieve, we can use it also for problem 7, which requires
-#finding the 10001st prime
-#And we can also use it for problem 10
+#But on the Euler website there is suggested a solution  that can be 
+#implemented. The catch is that we need the first N-th prime numbers.
+#For that, I implemented the Sieve of Eratosthenes: 
+#http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+#And since we have that sieve, we can use it also for other problems, like 7 or
+#10; it is also used in other scripts in the project
 
 import sys
 from math import sqrt, floor, log
@@ -16,7 +16,8 @@ def sieve(limit):
   length = len(primes)
   for i in range(0, end):
     if primes[i]:
-      for j in range(i+primes[i], length, primes[i]): #you need to be very careful with this loop
+      for j in range(i + primes[i], length, primes[i]): #you need to be very 
+                                                      #careful with this loop
         primes[j] = None
   return filter(None, primes)
 
@@ -25,14 +26,15 @@ def snd(nr):
   check = True
   limit = sqrt(nr)
   p = sieve(nr)
-  a = [1]*nr
+  a = [1] * nr
   for i in range(len(p)):
     if check:
       if p[i] <= limit:
-        a[i] = floor(log(nr)/log(p[i]))
+        a[i] = floor(log(nr) / log(p[i]))
       else:
         check = False
-    N *= p[i]**a[i] #if you are not familiar with Python, ** is the exponentation operation
+    N *= p[i] ** a[i] #if you are not familiar with Python, ** 
+                      #is the exponentation operation
   return N
 
 if __name__ == "__main__":

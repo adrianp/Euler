@@ -5,6 +5,8 @@
 import sys
 
 def main():
+
+  #ugly string
   string = "73167176531330624919225119674426574742355349194934\
 96983520312774506326239578318016984801869478851843\
 85861560789112949495459501737958331952853208805511\
@@ -30,7 +32,7 @@ def main():
   maximum = 59049 #9^5
   msf = 0
   for i in range(len(string)-4):
-    p = digits[i]*digits[i+1]*digits[i+2]*digits[i+3]*digits[i+4]
+    p = digits[i] * digits[i + 1] * digits[i + 2] * digits[i + 3] * digits[i + 4]
     if p > msf:
       msf = p
     if msf == maximum: #just in case

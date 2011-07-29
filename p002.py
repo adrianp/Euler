@@ -23,16 +23,16 @@ def fibonacci(n):
   bits = NtoBinary(n)
   for bit in bits:
     if bit: 
-      a, b = (a+c)*b, b*b + c*c
+      a, b = (a + c) * b, b * b + c * c
     else:
-      a, b = a*a + b*b, (a+c)*b
+      a, b = a * a + b * b, (a + c) * b
     c = a + b
   return a
   
 def main():
   s, i, n = 0, 0, -1
   while n < 4000000:
-    n, i = fibonacci(i), i+1
+    n, i = fibonacci(i), i + 1
     if n % 2 == 0:
       s += n
   print s
