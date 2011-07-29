@@ -29,9 +29,9 @@ def main():
     else:
       start, step = 990, 11
     
-    #iterating using a as a limit makes it impossible (wrong solution given) 
-    #to stop after a*b gets too small (or at least I couldn't find a way to do 
-    #it)
+    #iterating through the values of "b" using "a" as a limit makes it 
+    #impossible (wrong solution given) to stop after a * b gets too small (or 
+    #at least I couldn't find a way to do it)
     for b in range (start, 100, -step): 
       if a*a < pal: #because x*x > x*y where x >= y
         return pal
