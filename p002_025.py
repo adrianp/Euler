@@ -37,5 +37,11 @@ def main():
       s += n
   print s
 
+def longfib():
+  i = 0
+  while len(str(fibonacci(i))) < 1000:
+    i += 1
+  print i-1
+
 if __name__ == "__main__":
-  sys.exit(main())
+  sys.exit(longfib())
