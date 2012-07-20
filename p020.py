@@ -1,11 +1,13 @@
-import sys
 from math import factorial
+import sys
+
 
 def main():
-  n, s = factorial(100), 0
-  while n:
-    s, n = s + n % 10, n / 10
-  print s
+    n, s = factorial(100), 0
+    while n:
+        s, n = s + n % 10, n / 10
+    print s
+    return 0
 
 if __name__ == "__main__":
-  sys.exit(main())
+    sys.exit(main())

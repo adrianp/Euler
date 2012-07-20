@@ -1,13 +1,13 @@
-#I just hate this problem, nothing special about it
-#Can be improved probably using a queue for reducing the number of multiplications,
-#but it's not worth it
+# I just hate this problem, nothing special about it
+# Can be improved probably using a queue for reducing the number
+# of multiplications, but it's not worth it
 
 import sys
 
+
 def main():
 
-  #ugly string
-  string = "73167176531330624919225119674426574742355349194934\
+    string = "73167176531330624919225119674426574742355349194934\
 96983520312774506326239578318016984801869478851843\
 85861560789112949495459501737958331952853208805511\
 12540698747158523863050715693290963295227443043557\
@@ -28,16 +28,20 @@ def main():
 05886116467109405077541002256983155200055935729725\
 71636269561882670428252483600823257530420752963450"
 
-  digits = [int(c) for c in string] #converting the string to an array of integers
-  maximum = 59049 #9^5
-  msf = 0
-  for i in range(len(string)-4):
-    p = digits[i] * digits[i + 1] * digits[i + 2] * digits[i + 3] * digits[i + 4]
-    if p > msf:
-      msf = p
-    if msf == maximum: #just in case
-      break
-  print msf
+    # converting the string to an array of integers
+    digits = [int(c) for c in string]
+    maximum = 59049  # 9^5
+    msf = 0
+    for i in range(len(string) - 4):
+        p = 1
+        for j in range(5):
+            p *= digits[i + j]
+        if p > msf:
+            msf = p
+        if msf == maximum:  # just in case
+            break
+    print msf
+    return 0
 
 if __name__ == "__main__":
-  sys.exit(main())
+    sys.exit(main())
