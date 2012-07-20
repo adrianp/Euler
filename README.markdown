@@ -25,3 +25,4 @@ where _JohnDoe_ is the submitter's name. I will accept a solution only if:
 
 Regarding the formatting of the code, I try to stick as close as possible to 
 PEP 8: http://www.python.org/dev/peps/pep-0008/
+
