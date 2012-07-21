@@ -10,12 +10,15 @@ def NtoBinary(n):
     return bits
 
 
-# The algorithm to generate the n-th element of the Fibonacci sequence is
-# described in detail on the following pages:
-# [1] http://bosker.wordpress.com/2011/04/29/the-worst-algorithm-in-the-world/
-# [2] http://en.wikipedia.org/wiki/Fibonacci_number#Matrix_form
-# [3] http://www.ics.uci.edu/~eppstein/161/960109.html
 def fibonacci(n):
+    """An efficient algorithm for calculating the n-th element of the Fibonacci
+    sequence; detailed descriptions of the algorithm can be found at:
+
+        [1] http://bosker.wordpress.com/2011/04/29/the-worst-algorithm-in-the-world/
+        [2] http://en.wikipedia.org/wiki/Fibonacci_number#Matrix_form
+        [3] http://www.ics.uci.edu/~eppstein/161/960109.html
+
+    """
     assert n >= 0
     a, b, c = 1, 0, 1
     #Our matrix has the form:
@@ -66,3 +69,19 @@ def hailstone(n):
             n /= 2
         c += 1
     return c
+
+
+def binomial(n, k):
+    """Calculates the binomial coefficient, using the efficient multiplicative
+    formula:
+
+    http://en.wikipedia.org/wiki/Binomial_coefficient#Multiplicative_formula
+
+    """
+    result = 1
+    for i in xrange(1, k + 1):
+        # separating the multiplication from the division allows us to avoid
+        # some nasty floating point precision operations
+        result *= n - (k - i)
+        result /= i
+    return result
