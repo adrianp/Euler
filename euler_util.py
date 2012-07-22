@@ -85,3 +85,42 @@ def binomial(n, k):
         result *= n - (k - i)
         result /= i
     return result
+
+
+def read_triangle(infile):
+    """Reads a triangle of numbers from a file, as used in problems
+       18 and 67.
+
+    """
+    f = open(infile, 'r')
+    i = 0
+    triangle = []
+    for line in f:
+        triangle.append([])
+        tokens = line.split()
+        for token in tokens:
+            triangle[i].append(int(token))
+        i += 1
+    # we reverse the triangle to simplify the max sum algorithm
+    return triangle[::-1]
+
+
+def triangle_max_sum(triangle):
+    """Calculates the maximum sum in a triangle of numbers, as in
+    problems 18 and 67
+
+       It does this efficiently, by iteratively calculating the maximum sum
+       bottom-up.
+    """
+    for i in xrange(len(triangle) - 1):
+        # we replace each line with the maximum sums below it
+        new_line = []
+        for j in xrange(len(triangle[i]) - 1):
+            # each element of the new line is the maximum sum that can
+            # be obtained from the elements below it
+            new_line.append(max(triangle[i][j] + triangle[i + 1][j],
+                                triangle[i][j + 1] + triangle[i + 1][j]))
+        triangle[i + 1] = new_line
+    # at the end, the maximum sum is at the top of the triangle
+    # note that our triangle is upside-down, to simplofy the algorithm
+    return triangle[len(triangle) - 1][0]
