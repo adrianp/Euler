@@ -124,3 +124,14 @@ def triangle_max_sum(triangle):
     # at the end, the maximum sum is at the top of the triangle
     # note that our triangle is upside-down, to simplofy the algorithm
     return triangle[len(triangle) - 1][0]
+
+
+def toDigits(n):
+    """Returns a list with the digits of given number n """
+    digits = []
+    while n > 0:
+        qoutient = n / 10
+        remainder = n % 10
+        digits.append(remainder)
+        n = qoutient
+    return digits[::-1]
