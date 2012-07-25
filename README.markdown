@@ -1,5 +1,4 @@
-This is my attempt to solve the problems posted on Project Euler 
-(http://http://projecteuler.net). I work on them whenever I have some spare 
+This is my attempt to solve the problems posted on [Project Euler](http://projecteuler.net "Project Euler"). I work on them whenever I have some spare 
 time, so there is no real "release schedule". It also helps me improve 
 my Python and Git skills.
 
@@ -27,4 +26,4 @@ Note that some auxiliary functions are kept in __euler_util.py__. These function
 used for multiple other problems and I don't want to duplicate code; nobody wants.
 
 Regarding the formatting of the code, I try to stick as close as possible to 
-[PEP 8](http://www.python.org/dev/peps/pep-0008/ "PEP 8")
+[PEP 8](http://www.python.org/dev/peps/pep-0008/ "PEP 8").
