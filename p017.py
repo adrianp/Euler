@@ -40,5 +40,6 @@ def main(*args, **kwargs):
     print letters
     return 0
 
+
 if __name__ == "__main__":
     sys.exit(main())
