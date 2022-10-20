@@ -1,5 +1,5 @@
 import functools
-from math import sqrt
+from math import sqrt, floor
 
 
 def NtoBinary(n):
@@ -139,3 +139,13 @@ def toDigits(n):
         digits.append(remainder)
         n = qoutient
     return digits[::-1]
+
+
+def divisors(n):
+    """Returns all proper divisors of n"""
+    divisors = [1]
+    for i in range(2, floor(sqrt(n))):
+        if n % i == 0:
+            divisors += [i, n//i]
+    result = list(set(divisors))
+    return result
