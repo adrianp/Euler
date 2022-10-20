@@ -9,8 +9,9 @@ def main():
         n, i = fibonacci(i), i + 1
         if n % 2 == 0:
             s += n
-    print s
+    print(s)
     return 0
+
 
 if __name__ == "__main__":
     sys.exit(main())

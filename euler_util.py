@@ -1,3 +1,4 @@
+import functools
 from math import sqrt
 
 
@@ -5,11 +6,11 @@ def NtoBinary(n):
     bits = []
     while n > 0:
         n, bit = divmod(n, 2)  # quotient and remainder of dividing n by 2
-        bits.append(bit)
-    bits.reverse()
+        bits.insert(0, bit)
     return bits
 
 
+@functools.lru_cache(maxsize=1024)
 def fibonacci(n):
     """An efficient algorithm for calculating the n-th element of the Fibonacci
     sequence; detailed descriptions of the algorithm can be found at:
@@ -19,9 +20,11 @@ def fibonacci(n):
         [3] http://www.ics.uci.edu/~eppstein/161/960109.html
 
     """
-    assert n >= 0
+    if n == 0:
+        return 0
+
     a, b, c = 1, 0, 1
-    #Our matrix has the form:
+    # Our matrix has the form:
     # a b
     # b c
     bits = NtoBinary(n)
@@ -44,12 +47,13 @@ def sieve(limit):
     primes = list(range(2, limit + 1))
     end = int(sqrt(limit))
     length = len(primes)
+
     for i in range(0, end):
         if primes[i]:
             # you need to be very careful with this loop
             for j in range(i + primes[i], length, primes[i]):
                 primes[j] = None
-    return filter(None, primes)
+    return list(filter(None, primes))
 
 
 def hailstone(n):

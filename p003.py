@@ -24,11 +24,12 @@ def main(n):
             maxval = sqrt(n)
         current += 2  # we already checked for even factors
     if n == 1:
-        print factor
+        print(factor)
     else:
-        print n  # is a prime itself
+        print(n)  # is a prime itself
 
     return 0
+
 
 if __name__ == "__main__":
     sys.exit(main(600851475143))
