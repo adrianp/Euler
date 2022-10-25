@@ -3,7 +3,6 @@
 # missed are explained there
 
 import sys
-from math import sqrt
 
 from euler_util import sieve
 
@@ -37,7 +36,7 @@ def main():
         # the number of divisors of the "n+1" component can be reused in the
         # next step
         noDivsC1 = noDivsC2
-    print n * (n - 1) / 2  # the actual number, remember Problem 6?
+    print(n * (n - 1) // 2)  # the actual number, remember Problem 6?
     return 0
 
 

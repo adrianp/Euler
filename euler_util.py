@@ -143,8 +143,8 @@ def toDigits(n):
 
 def divisors(n):
     """Returns all proper divisors of n"""
-    divisors = [1]
-    for i in range(2, floor(sqrt(n))):
+    divisors = [1] if n > 0 else []
+    for i in range(2, floor(n/2)):
         if n % i == 0:
             divisors += [i, n//i]
     result = list(set(divisors))
