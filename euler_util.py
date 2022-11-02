@@ -87,7 +87,7 @@ def binomial(n, k):
         # separating the multiplication from the division allows us to avoid
         # some nasty floating point precision operations
         result *= n - (k - i)
-        result /= i
+        result //= i
     return result
 
 

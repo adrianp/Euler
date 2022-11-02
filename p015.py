@@ -8,8 +8,9 @@ from euler_util import binomial
 
 
 def main(*args, **kwargs):
-    print binomial(2 * args[0], args[0])
+    print(binomial(2 * args[0], args[0]))
     return 0
+
 
 if __name__ == "__main__":
     sys.exit(main(20))
