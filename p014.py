@@ -1,6 +1,6 @@
 # Wikipedia: Starting values with longer stopping time than any smaller
 # starting value are known as "high water marks". A list of high water marks
-# can be foundhere: http://oeis.org/A006877
+# can be found here: http://oeis.org/A006877
 
 import sys
 
@@ -16,18 +16,17 @@ def main():
         else:
             break
 
-    # this is mainly cheating (checking only odd numbers)
-    # for i in range(1, 1000000, 2):
     for i in range(1000000):
         # powers of two converge to one quickly as the "increase step"
-        # is never used
-        if not i in pow2:
+        # is never used; you could also skip even numbers altogether
+        if i not in pow2:
             c = hailstone(i)
             if c > maxc:
                 maxc = c
                 nr = i
-    print nr
+    print(nr)
     return 0
+
 
 if __name__ == "__main__":
     sys.exit(main())

@@ -67,7 +67,7 @@ def hailstone(n):
     while n > 1:
         if n % 2 == 1:
             # this is a visible improvement made possible by the fact that
-            # The Collatz conjecture is defined as a parity sequence
+            # the Collatz conjecture is defined as a parity sequence
             n = (3 * n + 1) / 2
         else:
             n /= 2
@@ -83,7 +83,7 @@ def binomial(n, k):
 
     """
     result = 1
-    for i in xrange(1, k + 1):
+    for i in range(1, k + 1):
         # separating the multiplication from the division allows us to avoid
         # some nasty floating point precision operations
         result *= n - (k - i)
@@ -116,10 +116,10 @@ def triangle_max_sum(triangle):
        It does this efficiently, by iteratively calculating the maximum sum
        bottom-up.
     """
-    for i in xrange(len(triangle) - 1):
+    for i in range(len(triangle) - 1):
         # we replace each line with the maximum sums below it
         new_line = []
-        for j in xrange(len(triangle[i]) - 1):
+        for j in range(len(triangle[i]) - 1):
             # each element of the new line is the maximum sum that can
             # be obtained from the elements below it
             new_line.append(max(triangle[i][j] + triangle[i + 1][j],
