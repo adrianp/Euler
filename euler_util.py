@@ -134,10 +134,8 @@ def toDigits(n):
     """Returns a list with the digits of given number n """
     digits = []
     while n > 0:
-        qoutient = n / 10
-        remainder = n % 10
+        n, remainder = divmod(n, 10)
         digits.append(remainder)
-        n = qoutient
     return digits[::-1]
 
 

@@ -17,8 +17,6 @@ def main(*args, **kwargs):
     letters = 0
 
     for i in range(1, 1001):
-        new = ""
-
         if i in numbers.keys():
             letters += len(numbers[i])
         else:
@@ -26,10 +24,10 @@ def main(*args, **kwargs):
             magnitude = len(digits)
             if magnitude == 2:
                 new = numbers[digits[0] * 10] + numbers[digits[1]]
+                letters += len(new)
                 # we can reuse the 2-digit numbers when writting
                 # the 3-digits ones
                 numbers[i] = new
-                letters += len(new)
             elif magnitude == 3:
                 # note that we do not insert spaces
                 new = numbers[digits[0]] + "hundred"
@@ -37,7 +35,7 @@ def main(*args, **kwargs):
                     new += "and" + numbers[digits[1] * 10 + digits[2]]
                 letters += len(new)
 
-    print letters
+    print(letters)
     return 0
 
 
