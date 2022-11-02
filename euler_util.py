@@ -126,7 +126,7 @@ def triangle_max_sum(triangle):
                                 triangle[i][j + 1] + triangle[i + 1][j]))
         triangle[i + 1] = new_line
     # at the end, the maximum sum is at the top of the triangle
-    # note that our triangle is upside-down, to simplofy the algorithm
+    # note that our triangle is upside-down, to simplify the algorithm
     return triangle[len(triangle) - 1][0]
 
 
